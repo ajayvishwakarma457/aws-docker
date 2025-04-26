@@ -1,0 +1,32 @@
+1) Connect to Ubuntu EC2 Instance
+        bash:
+        ssh -i "your-key.pem" ubuntu@your-ec2-public-ip
+
+
+🐳 2) Install Docker on Ubuntu
+        bash:
+        sudo apt update -y
+        sudo apt install docker.io -y
+        sudo systemctl start docker
+        sudo systemctl enable docker
+        sudo usermod -aG docker ubuntu
+        Then logout and login again so Docker group changes take effect:
+
+        base:
+        exit
+        # Then SSH again
+        ssh -i "your-key.pem" ubuntu@your-ec2-public-ip
+
+🧰 3) Install Git and Clone Your Project
+        bash:
+        sudo apt install git -y
+        git clone https://github.com/ajayvishwakarma457/aws-docker.git
+        cd aws-docker
+
+
+🧱 4) Build Docker Image and Run Container
+        Make sure there’s a Dockerfile in your repo.
+        
+        bash:
+        docker build -t node-app .
+        docker run -d -p 3000:3000 node-app
