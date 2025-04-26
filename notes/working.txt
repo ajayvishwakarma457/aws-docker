@@ -26,7 +26,15 @@
 
 🧱 4) Build Docker Image and Run Container
         Make sure there’s a Dockerfile in your repo.
-        
+
         bash:
         docker build -t node-app .
         docker run -d -p 3000:3000 node-app
+
+
+🌐 5) Access the App
+        Make sure your EC2 Security Group allows inbound traffic on port 3000.
+
+        Then open in your browser:
+        arduino:
+        http://your-ec2-public-ip:3000
