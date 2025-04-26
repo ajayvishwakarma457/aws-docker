@@ -1,11 +1,16 @@
 // app.js
-const http = require('http');
+const express = require('express');
+const app = express();
+const port = 3000;
 
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Hello from Node.js on Mac!\n');
+app.get('/', (req, res) => {
+  res.send('Hello from Express!');
 });
 
-server.listen(3000, () => {
-  console.log('Server running on http://localhost:3000');
+app.get('/about', (req, res) => {
+    res.send('Hello from About!');
+  });
+
+app.listen(port, () => {
+  console.log(`Server is running at http://localhost:${port}`);
 });
