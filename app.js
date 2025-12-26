@@ -23,8 +23,8 @@ app.get('/services', (req, res) => {
   res.send('Hello from Services!');
 });
 
-app.get('/products', (req, res) => {
-  res.send('Hello from Products!');
+app.get('/product1', (req, res) => {
+  res.send('Hello from Products1!');
 });
 
 app.listen(port, "0.0.0.0", () => {
